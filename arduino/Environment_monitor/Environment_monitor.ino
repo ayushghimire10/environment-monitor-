@@ -1,13 +1,16 @@
 #include <DHT.h>
+#include <LiquidCrystal.h>
 #define DHTPIN 7 //S wire connected to pin 7 
 #define DHTTYPE DHT11  //Sensor model 
 #define LIGHTPIN A0 //analog pin w/ output node 
 
 DHT dht(DHTPIN, DHTTYPE); //DHT object 
+LiquidCrystal lcd(12,11,5,4,3,2);
 
 void setup() {
   Serial.begin(9600);
   dht.begin();
+  lcd.begin(16,2); 
 }
 
 void loop(){
@@ -28,4 +31,13 @@ void loop(){
   Serial.print(humidity);
   Serial.println(" %   Light: ");
   Serial.print(lightLevel);
+  lcd.clear();
+  lcd.setCursor(0,0); //rows 0 - 1, cols 0 - 15
+  lcd.print(temperature,1);
+  lcd.print("C ");
+  lcd.print(humidity, 0);
+  lcd.print("%RH");
+  lcd.setCursor(0,1);
+  lcd.print("Light: ");
+  lcd.print(lightLevel);
 }
