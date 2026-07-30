@@ -25,11 +25,10 @@ void loop(){
     return; //end the loop if any reads fail 
   }
 
-  Serial.print("Temperature: ");
   Serial.print(temperature);
-  Serial.print(" C   Humidity: ");
+  Serial.print(",");
   Serial.print(humidity);
-  Serial.println(" %   Light: ");
+  Serial.print(",");
   Serial.print(lightLevel);
   lcd.clear();
   lcd.setCursor(0,0); //rows 0 - 1, cols 0 - 15
