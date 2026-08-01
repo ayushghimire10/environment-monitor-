@@ -16,6 +16,8 @@ The system consists of two parts that communicate over a USB cable.
 
 ## Hardware
 
+![The assembled circuit](images/circuit.jpeg)
+
 | Component | Purpose | Connection |
 
 | Elegoo Uno R3 | Controller |  |
